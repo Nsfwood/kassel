@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  kassel
 //
-//  Created by Alexander Rohrig on 10/6/20.
+//  
 //
 
 import Cocoa
