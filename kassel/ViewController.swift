@@ -25,33 +25,34 @@ class ViewController: NSViewController {
     var n = 0
 
     @IBAction func calPressed(_ sender: Any) {
-        n = Int(nField.stringValue) ?? 0
-        a = 0
-        b = 0
-        c = 0
-        d = 0
-        sum = 0
-        
-        for x in 1...n {
-            a = a + (2 * x)
-            b = b + (3 * x)
-            c = c + (4 * x)
-            d = d + (5 * x)
+        if let n = Int(nField.stringValue) {
+            a = 0
+            b = 0
+            c = 0
+            d = 0
+            sum = 0
+            
+            for x in 1...n {
+                a = a + (2 * x)
+                b = b + (3 * x)
+                c = c + (4 * x)
+                d = d + (5 * x)
+            }
+            
+            b = a + b
+            c = a + b + c
+            d = a + b + c + d
+            sum = a + b + c + d
+            
+            aField.stringValue = "\(a)"
+            bField.stringValue = "\(b)"
+            cField.stringValue = "\(c)"
+            dField.stringValue = "\(d)"
+            sumField.stringValue = "\(sum)"
+            
+            print(sum)
+            sumField.stringValue = "\(sum)"
         }
-        
-        b = a + b
-        c = a + b + c
-        d = a + b + c + d
-        sum = a + b + c + d
-        
-        aField.stringValue = "\(a)"
-        bField.stringValue = "\(b)"
-        cField.stringValue = "\(c)"
-        dField.stringValue = "\(d)"
-        sumField.stringValue = "\(sum)"
-        
-        print(sum)
-        sumField.stringValue = "\(sum)"
     }
     
 }
